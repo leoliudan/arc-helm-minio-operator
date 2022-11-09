@@ -1,10 +1,10 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: azure-arc-sample
-  namespace: arc-k8s-demo
+  name: azure-arc-minio
+  namespace: arc-k8s-minio
 spec:
-  releaseName: arc-k8s-demo
+  releaseName: arc-k8s-minio
   chart:
     git: https://github.com/minio/operator
     ref: master
