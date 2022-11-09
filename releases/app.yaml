@@ -1,0 +1,18 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: azure-arc-sample
+  namespace: arc-k8s-demo
+spec:
+  releaseName: arc-k8s-demo
+  chart:
+    git: https://github.com/minio/operator
+    ref: master
+    path: helm/operator
+  values:
+    rootUser: "rootuser"
+    rootPassword: "rootpass123"
+    replicas: 3
+    persistence:
+      storageClass: "ase-node-local"
+      size: 2Gi
